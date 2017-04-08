@@ -15,17 +15,21 @@ namespace MVCProject.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 2, ErrorMessage = "The Name Must Be Between 2 and 50 characters")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "Name Must Be Between 2 and 50 characters")]
         public string Name { get; set; }
-
-        [StringLength(50, MinimumLength = 20)]
+        
+        [Range(20,50)]
         public int Capacity { get; set; }
 
-      //  public List<Course> Courses { get; set; }
+        public List<Course> Courses { get; set; }
 
+        [Required]
         [ForeignKey("Ins")]
-        public int ManagerId { get; set; }
-       // public virtual Instructor Ins { get; set; }
+        public string ManagerId { get; set; }
+
+        [InverseProperty("Dept")]
+        public List<Instructor> instrucs { get; set; }
+        public virtual Instructor Ins { get; set; }
 
     }
 }

@@ -17,11 +17,10 @@ namespace MVCProject.Models
         [Required]
         public string Body { get; set; }
 
-        public List<string> Answer { get; set; }
-
         [Required]
         public string CorrectAnswer { get; set; }
 
-      //  public List<Exam> Exams { get; set; }
+        public virtual List<Answer> Answers { get; set; }
+        public virtual List<Exam> Exams { get; set; }
     }
 }

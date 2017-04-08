@@ -24,6 +24,18 @@ namespace MVCProject.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Student> Students { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<Exam> Exams { get; set; }
+        public DbSet<OfficialVacation> OfficialVacations { get; set; }
+        public DbSet<StudentExam> StudentExams { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
+        public DbSet<StudentAttendence> StudentAttendences { get; set; }
+        public DbSet<StudentInstructorCourse> StudentInstructorCourses { get; set; }
+        public DbSet<InstructorCourseDepartment> InstructorCourseDepartments { get; set; }
         public ApplicationDbContext()
             : base("MVCConnection", throwIfV1Schema: false)
         {
